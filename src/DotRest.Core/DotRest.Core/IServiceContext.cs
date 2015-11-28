@@ -1,3 +1,5 @@
+using Yalla;
+
 namespace DotRest
 {
     /// <summary>
@@ -7,10 +9,10 @@ namespace DotRest
         where TSettings : IClientSettings
     {
         /// <summary>
-        /// Gets the log provider.
+        /// Gets the log factory.
         /// </summary>
-        /// <value>Log provider.</value>
-        ILogProvider LogProvider
+        /// <value>Log factory.</value>
+        ILogFactory LogFactory
         {
             get;
         }

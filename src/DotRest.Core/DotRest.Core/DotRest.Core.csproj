@@ -36,13 +36,6 @@
     <DocumentationFile>bin\Release\DotRest.Core.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <None Include="ILog.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ILog.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="IClientSettings.cs" />
     <Compile Include="IMediaTypeHeader.cs" />
     <Compile Include="ServiceContext.cs" />
@@ -53,18 +46,20 @@
     <Compile Include="IClientRequest.cs" />
     <Compile Include="IClientResponse.cs" />
     <Compile Include="IServiceContext.cs" />
-    <Compile Include="ILog.cs">
-      <DependentUpon>ILog.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="ILogProvider.cs" />
     <Compile Include="ISerializer.cs" />
-    <Compile Include="LogLevel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Yalla.Core, Version=1.0.5810.4789, Culture=neutral, PublicKeyToken=3fe4f27357dd4c58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Yalla.Core.0.1.2-pre\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Yalla.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

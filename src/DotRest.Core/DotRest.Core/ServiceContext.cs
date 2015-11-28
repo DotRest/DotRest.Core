@@ -1,3 +1,5 @@
+using Yalla;
+
 namespace DotRest
 {
     /// <summary>
@@ -6,7 +8,7 @@ namespace DotRest
     public sealed class ServiceContext<TSettings> : IServiceContext<TSettings>
         where TSettings : IClientSettings
     {
-        private readonly ILogProvider logProvider;
+        private readonly ILogFactory logFactory;
 
         private readonly ISerializer serializer;
 
@@ -21,15 +23,15 @@ namespace DotRest
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceContext{TSettings}"/> class.
         /// </summary>
-        /// <param name="logProvider">Log provider.</param>
+        /// <param name="logFactory">Log factory.</param>
         /// <param name="serializer">Serializer.</param>
         /// <param name="clientFactory">Client factory.</param>
         /// <param name="clientSettings">Client settings.</param>
         /// <param name="baseUri">Base URI.</param>
         /// <param name="pathFormat">URI path format.</param>
-        public ServiceContext(ILogProvider logProvider, ISerializer serializer, IClientFactory<TSettings> clientFactory, TSettings clientSettings, System.Uri baseUri, string pathFormat)
+        public ServiceContext(ILogFactory logFactory, ISerializer serializer, IClientFactory<TSettings> clientFactory, TSettings clientSettings, System.Uri baseUri, string pathFormat)
         {
-            this.logProvider = logProvider;
+            this.logFactory = logFactory;
             this.serializer = serializer;
             this.clientFactory = clientFactory;
             this.clientSettings = clientSettings;
@@ -38,14 +40,14 @@ namespace DotRest
         }
 
         /// <summary>
-        /// Gets the log provider.
+        /// Gets the log factory.
         /// </summary>
-        /// <value>Log provider.</value>
-        public ILogProvider LogProvider
+        /// <value>Log factory.</value>
+        public ILogFactory LogFactory
         {
             get
             {
-                return this.logProvider;
+                return this.logFactory;
             }
         }
 
