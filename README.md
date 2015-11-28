@@ -1,10 +1,12 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/1tpu6m8o1id37blw)](https://ci.appveyor.com/project/dmitry-shechtman/dotrest-core)
+
 DotRest.Core
 ============
 
 Notice
 ------
 
-   Copyright © Dmitry Shechtman 2015
+   Copyright Â© Dmitry Shechtman 2015
 
    Licensed under the Apache License, Version 2.0 (the "License").
 
