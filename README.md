@@ -1,4 +1,5 @@
-# DotRest.Core
+DotRest.Core
+============
 
 Notice
 ------
